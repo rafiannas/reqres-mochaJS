@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "chai": "^6.2.0",
+    "mocha": "^11.7.4",
+    "supertest": "^7.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  },
+  "scripts": {
+  "test": "mocha tests_explorer/test_case --timeout 60000"
+}
+
+}
