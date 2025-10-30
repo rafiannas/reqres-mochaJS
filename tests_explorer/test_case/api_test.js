@@ -1,8 +1,7 @@
-const request = require('supertest');
-const { expect } = require('chai');
-const { Endpoints } = require('../object_repository/endpoints');
-const { baseConfig, createHeaders } = require('../utils/helper');
-
+import request from 'supertest';
+import { expect } from 'chai';
+import { Endpoints } from '../object_repository/endpoints.js';
+import { baseConfig, createHeaders } from '../utils/helper.js';
 
 describe('🧪 API Testing Demo', () => {
   it('GET All Users', async () => {

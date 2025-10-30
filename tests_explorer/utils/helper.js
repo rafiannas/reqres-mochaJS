@@ -1,14 +1,13 @@
-const dotenv = require('dotenv');
+// Helper untuk konfigurasi environment & header
+import dotenv from 'dotenv';
 dotenv.config();
 
-const baseConfig = {
-  baseURL: process.env.BASE_URL,
-  token: process.env.AUTH_TOKEN,
+export const baseConfig = {
+  baseURL: process.env.BASE_URL || 'https://reqres.in/api',
+  token: process.env.AUTH_TOKEN || ''
 };
 
-const createHeaders = () => ({
+export const createHeaders = () => ({
   Authorization: `Bearer ${baseConfig.token}`,
-  'Content-Type': 'application/json',
+  'Content-Type': 'application/json'
 });
-
-module.exports = { baseConfig, createHeaders };
