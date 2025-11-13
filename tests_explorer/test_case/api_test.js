@@ -7,7 +7,7 @@ describe('🧪 API Testing Demo', () => {
   it('GET All Users', async () => {
     const res = await request(baseConfig.baseURL)
       .get(Endpoints.getAllUsers)
-      .set(createHeaders());
+     // .set(createHeaders());
 
     expect(res.status).to.equal(200);
     expect(res.body.total).to.be.equal(12);
@@ -16,7 +16,7 @@ describe('🧪 API Testing Demo', () => {
   it('GET 1 User', async () => {
     const res = await request(baseConfig.baseURL)
       .get(Endpoints.getUsers)
-      .set(createHeaders());
+     // .set(createHeaders());
 
     expect(res.status).to.equal(200);
     expect(res.body.data.id).to.be.equal(2);
