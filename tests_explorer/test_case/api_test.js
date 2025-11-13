@@ -8,6 +8,7 @@ describe('🧪 API Testing Demo', () => {
     const res = await request(baseConfig.baseURL)
       .get(Endpoints.getAllUsers)
      // .set(createHeaders());
+    console.log("req = ", res.request);
 
     expect(res.status).to.equal(200);
     expect(res.body.total).to.be.equal(12);
