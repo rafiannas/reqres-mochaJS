@@ -17,6 +17,7 @@ describe('🧪 API Testing Demo', () => {
   it('GET All Users', async () => {
     const res = await request(baseConfig.baseURL)
       .get(Endpoints.getAllUsers)
+      .set("x-api-key", "reqres-free-v1")
       .agent(ipv4Agent)
      // .set(createHeaders());
 
@@ -30,6 +31,7 @@ describe('🧪 API Testing Demo', () => {
   it('GET 1 User', async () => {
     const res = await request(baseConfig.baseURL)
       .get(Endpoints.getUsers)
+      .set("x-api-key", "reqres-free-v1")
       .agent(ipv4Agent)
      // .set(createHeaders());
 
