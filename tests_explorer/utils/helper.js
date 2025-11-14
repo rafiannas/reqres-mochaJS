@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const baseConfig = {
-  baseURL: process.env.BASE_URL || 'https://reqres.in/api',
+  baseURL: process.env.BASE_URL || 'https://reqres.in/',
   token: process.env.AUTH_TOKEN || ''
 };
 
