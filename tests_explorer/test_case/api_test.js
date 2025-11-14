@@ -7,8 +7,9 @@ describe('🧪 API Testing Demo', () => {
   it('GET All Users', async () => {
     const res = await request(baseConfig.baseURL)
       .get(Endpoints.getAllUsers)
-      .set('Accept', 'application/json')
-      .set('User-Agent', 'Mozilla/5.0');
+      .set("User-Agent", "Mozilla/5.0")  
+      .set("Accept", "application/json")
+      .set("Connection", "close");
      // .set(createHeaders());
     console.log('REQUEST HEADERS:', res.req._headers);
 
