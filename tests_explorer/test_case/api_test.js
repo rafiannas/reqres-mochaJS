@@ -6,20 +6,22 @@ import { baseConfig, createHeaders } from '../utils/helper.js';
 import https from "https";
 import dns from "dns";
 
-describe('🧪 API Testing Demo', () => {
-
-  const ipv4Agent = new https.Agent({
+const ipv4Agent = new https.Agent({
   family: 4,
   lookup: (hostname, opts, cb) => {
     dns.lookup(hostname, { family: 4 }, cb);
   }
 });
 
+describe('🧪 API Testing Demo', () => {
   it('GET All Users', async () => {
     const res = await request(baseConfig.baseURL)
       .get(Endpoints.getAllUsers)
       .agent(ipv4Agent)
      // .set(createHeaders());
+
+    console.log("STATUS:", res.status);
+    console.log("BODY:", res.body);
 
     expect(res.status).to.equal(200);
     expect(res.body.total).to.be.equal(12);
