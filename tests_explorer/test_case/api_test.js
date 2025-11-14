@@ -21,6 +21,7 @@ describe('🧪 API Testing Demo', () => {
       .agent(ipv4Agent)
      // .set(createHeaders());
 
+    console.log("BASE URL:", baseConfig.baseURL);
     console.log("STATUS:", res.status);
     console.log("BODY:", res.body);
 
