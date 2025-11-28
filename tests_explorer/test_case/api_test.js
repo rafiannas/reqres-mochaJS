@@ -21,10 +21,6 @@ describe('🧪 API Testing Demo', () => {
       .agent(ipv4Agent)
      // .set(createHeaders());
 
-    console.log("BASE URL:", baseConfig.baseURL);
-    console.log("STATUS:", res.status);
-    console.log("BODY:", res.body);
-
     expect(res.status).to.equal(200);
     expect(res.body.total).to.be.equal(12);
   });
@@ -38,5 +34,16 @@ describe('🧪 API Testing Demo', () => {
 
     expect(res.status).to.equal(200);
     expect(res.body.data.id).to.be.equal(2);
+  });
+
+  it('PUT User', async () => {
+    const res = await request(baseConfig.baseURL)
+      .put(Endpoints.getUserNotFound)
+      .set("x-api-key", "reqres-free-v1")
+      .agent(ipv4Agent)
+
+
+    expect(res.status).to.equal(200);
+    expect(res.body.updatedAt).to.be.not.equal(null);
   });
 });
